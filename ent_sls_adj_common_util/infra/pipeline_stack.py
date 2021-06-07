@@ -18,13 +18,15 @@ class PipelineStack(core.Stack):
                                          cloud_assembly_artifact=cloud_assembly_artifact,
                                          pipeline_name='CorepcodePipeline',
 
-                                         source_action=cpactions.BitBucketSourceAction(
-                                             connection_arn=self._raw_config.application['connection_arn'],
-                                             action_name='GitHubEnterprise',
+                                         source_action=cpactions.GitHubSourceAction(
+                                             #connection_arn=self._raw_config.application['connection_arn'],
+                                             action_name='GitHub',
                                              output=source_artifact,
+                                             oauth_token=core.SecretValue.secrets_manager('github-token'),
                                              owner=self._raw_config.application['owner'],
                                              repo=self._raw_config.application['repo_name'],
-                                             branch=self._raw_config.application['branch']),
+                                             branch=self._raw_config.application['branch'],
+                                             trigger=cpactions.GitHubTrigger.POLL ),
 
                                          synth_action=pipelines.SimpleSynthAction(
                                              source_artifact=source_artifact,

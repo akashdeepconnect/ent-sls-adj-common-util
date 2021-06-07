@@ -80,7 +80,6 @@ mccabe==0.6.1
 numpy==1.20.2
 openpyxl==3.0.7
 packaging==20.9
-pandas==1.2.4
 pg8000==1.18.0
 pluggy==0.13.1
 publication==0.0.3

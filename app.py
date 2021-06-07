@@ -14,7 +14,7 @@ raw_config = RawConfig(config_file)
 app = core.App()
 
 PipelineStack(app, 'CorepcodePipelineStack', env={
-    'account': '114611186486',
+    'account': '315207712355',
     'region': 'us-east-1'
 }, raw_config=raw_config)
 app.synth()

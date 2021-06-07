@@ -1,17 +1,17 @@
 {
   "application": {
     "repo_name": "ent-sls-adj-common-util",
-    "owner": "StateAuto",
-    "branch": "corepcodecdkk",
+    "owner": "akashdeepconnect",
+    "branch": "main",
     "connection_arn": "arn:aws:codestar-connections:us-east-1:114611186486:connection/207a792e-73ed-4a6b-8c7b-8b350a77f1d2"
   },
   "DEV": {
     "env": {
-      "account": "114611186486",
+      "account": "315207712355",
       "region": "us-east-1"
     },
     "lambda_info": {
-      "lambda_execution_arn": "arn:aws:iam::114611186486:role/MSD-0007-Agency_DatalakeNonProd_S3CrossAcct_Read",
+      "lambda_execution_arn": "arn:aws:iam::315207712355:role/stateauto",
       "lambda_trigger_rule_arn": "arn:aws:events:us-east-1:114611186486:rule/ADJ-Agup-Trigger-Rule",
        "layers": [
         {
@@ -46,11 +46,11 @@
   },
   "UAT": {
     "env": {
-      "account": "114611186486",
+      "account": "315207712355",
       "region": "us-east-1"
     },
     "lambda_info": {
-      "lambda_execution_arn": "arn:aws:iam::114611186486:role/MSD-0007-Agency_DatalakeNonProd_S3CrossAcct_Read",
+      "lambda_execution_arn": "arn:aws:iam::315207712355:role/stateauto",
       "lambda_trigger_rule_arn": "arn:aws:events:us-east-1:114611186486:rule/ADJ-Agup-Trigger-Rule",
 
       "layers": [
@@ -86,11 +86,11 @@
   },
   "PROD": {
     "env": {
-      "account": "114611186486",
+      "account": "315207712355",
       "region": "us-east-1"
     },
     "lambda_info": {
-      "lambda_execution_arn": "arn:aws:iam::210297932044:role/MSP-0007-Agency_DatalakeProd_S3CrossAcct_Read",
+      "lambda_execution_arn": "arn:aws:iam::315207712355:role/stateauto",
       "lambda_trigger_rule_arn": "arn:aws:events:us-east-1:114611186486:rule/ADJ-Agup-Trigger-Rule",
       "layers": [
         {
