@@ -22,7 +22,7 @@ class CorepcodeStack(core.Stack):
         functions_folder = path.join(os.path.dirname(this_dir), 'functions')
 
         lambda_service = LambdaService(role_arn=raw_config.lambda_info['lambda_execution_arn'],
-                                       layers=raw_config.lambda_info['layers'],
+                                       layers=None,
                                        env=raw_config.lambda_info['lambda_env_vars']['ENV'], scope=self)
 
 
