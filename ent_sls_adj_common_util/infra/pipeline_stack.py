@@ -32,7 +32,7 @@ class PipelineStack(core.Stack):
                                              source_artifact=source_artifact,
                                              cloud_assembly_artifact=cloud_assembly_artifact,
                                              install_command='npm install -g aws-cdk && pip install -r requirements.txt',
-                                             # build_command='pytest unittests',
+                                             build_command='pytest Tests',
                                              synth_command='cdk synth'))
 
         dev_env = core.Environment(**self._raw_config.development.env)
