@@ -26,7 +26,8 @@
 
       "lambda_env_vars": {
         "TABLE_NAME": "L2_agcy_custom_config",
-        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency"
+        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency",
+        "ENV": "l2"
 
       }
     }
@@ -53,7 +54,8 @@
 
       "lambda_env_vars": {
         "TABLE_NAME": "L3_agcy_custom_config",
-        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency"
+        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency",
+        "ENV": "l3"
       }
     }
   },
@@ -77,7 +79,8 @@
       ],
       "lambda_env_vars": {
         "TABLE_NAME": "L4_agcy_custom_config",
-        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency"
+        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency",
+        "ENV": "l4"
       }
     }
   }

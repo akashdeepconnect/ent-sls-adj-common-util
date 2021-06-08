@@ -4,6 +4,7 @@ import os
 from .iam_service import IAMService
 import aws_cdk.aws_dynamodb as dynamodb
 from aws_cdk import aws_dynamodb as ddb
+from aws_cdk.core import  Duration
 from aws_cdk.aws_lambda_event_sources import DynamoEventSource
 class LambdaService:
 
@@ -46,14 +47,17 @@ class LambdaService:
             environment=environment
         )
     def ret_dynamodb(self):
-        return ddb.ITable.table_arn('arn:aws:dynamodb:us-east-1:315207712355:table/test')
+        #itable = ddb.Table.from_table_arn(self.scope,"test","arn:aws:dynamodb:us-east-1:315207712355:table/test")
+        itable = ddb.Table.from_table_attributes(self.scope,"test",table_arn="arn:aws:dynamodb:us-east-1:315207712355:table/test",table_stream_arn="arn:aws:dynamodb:us-east-1:315207712355:table/test/stream/2021-06-07T14:43:56.312")
+        #return ddb.ITable(self,table_arn='arn:aws:dynamodb:us-east-1:315207712355:table/test')
 
-
+        return itable
     def create_dynamodb_trigger(self):
-        db_trigger = DynamoEventSource(self.ret_dynamodb(), batch_size=1000,\
-                                       max_batching_window=1,\
-                                       max_record_age=60, parallelization_factor=4,\
-                                       retry_attempts=0)
+        itable = self.ret_dynamodb()
+
+        db_trigger = DynamoEventSource(itable,enabled=True,starting_position=lambdas.StartingPosition.LATEST, batch_size=1000,max_batching_window=Duration.seconds(60), parallelization_factor=4,retry_attempts=0)
+
+
         return db_trigger
 
 
