@@ -25,22 +25,9 @@
       ],
 
       "lambda_env_vars": {
-        "Bucket_Name": "sa-adj-mainframe-integration",
-        "DEBUG_MODE": "true",
-        "ARCHIVE_LOC": "-agup-archive/",
-        "DEBUG_FOLDER": "-agup-debug/",
-        "DELTA_FILENAME": "Backfeed_20190201160748.txt",
-        "DL_PROCESSED_DATABASE_NAME": "_processed_nclus",
-        "DL_SECURED_STAGING_DATABASE_NAME": "_staging_secured_nclus",
-        "DL_STAGING_DATABASE_NAME": "_staging_nclus",
-        "ENV": "l2",
-        "METADATA_FOLDER": "-agup-metadata/",
-        "Output_File_Name": "temp",
-        "Output_Location": "-agup-outbound/",
-        "PROCESSED_BACKFEED_FILE_NAME": "backfeed_2021_04_20.csv",
-        "PROCESSED_BACKFEED_LOC": "-agup-processed/",
-        "OVERRIDE_LASTMODIFIED_DATE": "2021-05-18T01:27:02.110844",
+        "TABLE_NAME": "L2_agcy_custom_config",
         "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency"
+
       }
     }
   },
@@ -65,21 +52,7 @@
       ],
 
       "lambda_env_vars": {
-        "Bucket_Name": "sa-adj-mainframe-integration",
-        "DEBUG_MODE": "true",
-        "ARCHIVE_LOC": "-agup-archive/",
-        "DEBUG_FOLDER": "-agup-debug/",
-        "DELTA_FILENAME": "Backfeed_20190201160748.txt",
-        "DL_PROCESSED_DATABASE_NAME": "_processed_nclus",
-        "DL_SECURED_STAGING_DATABASE_NAME": "_staging_secured_nclus",
-        "DL_STAGING_DATABASE_NAME": "_staging_nclus",
-        "ENV": "l3",
-        "METADATA_FOLDER": "-agup-metadata/",
-        "Output_File_Name": "temp",
-        "Output_Location": "-agup-outbound/",
-        "PROCESSED_BACKFEED_FILE_NAME": "backfeed_2021_04_20.csv",
-        "PROCESSED_BACKFEED_LOC": "-agup-processed/",
-        "OVERRIDE_LASTMODIFIED_DATE": "2021-05-18T01:27:02.110844",
+        "TABLE_NAME": "L3_agcy_custom_config",
         "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency"
       }
     }
@@ -103,21 +76,8 @@
         }
       ],
       "lambda_env_vars": {
-        "Bucket_Name": "sa-adj-mainframe-integration",
-        "DEBUG_MODE": "true",
-        "ARCHIVE_LOC": "-agup-archive/",
-        "DEBUG_FOLDER": "-agup-debug/",
-        "DELTA_FILENAME": "Backfeed_20190201160748.txt",
-        "DL_PROCESSED_DATABASE_NAME": "_processed_nclus",
-        "DL_SECURED_STAGING_DATABASE_NAME": "_staging_secured_nclus",
-        "DL_STAGING_DATABASE_NAME": "_staging_nclus",
-        "ENV": "l4",
-        "METADATA_FOLDER": "-agup-metadata/",
-        "Output_File_Name": "tempp",
-        "Output_Location": "-agup-outbound/",
-        "PROCESSED_BACKFEED_FILE_NAME": "backfeed_2021_04_20.csv",
-        "PROCESSED_BACKFEED_LOC": "-agup-processed/",
-        "TARGET_ROLE_ARN": "arn:aws:iam::138075740753:role/ADFS-Prod-DataLake-Agency"
+        "TABLE_NAME": "L4_agcy_custom_config",
+        "TARGET_ROLE_ARN": "arn:aws:iam::983715115622:role/ADFS-NonProd-DataLake-Agency"
       }
     }
   }

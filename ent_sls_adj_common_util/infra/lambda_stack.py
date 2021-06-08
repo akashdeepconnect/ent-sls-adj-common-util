@@ -35,4 +35,7 @@ class CorepcodeStack(core.Stack):
             environment=raw_config.lambda_info['lambda_env_vars']
 
         )
+        db_trigger = lambda_service.create_dynamodb_trigger()
+
+        lambda_trigger = get_changed_agencies_info_handler.add_event_source(db_trigger)
 

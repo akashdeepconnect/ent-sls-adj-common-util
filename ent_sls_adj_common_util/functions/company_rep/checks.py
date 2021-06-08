@@ -1,3 +1,8 @@
+import sys
+import os
+path = os.path.abspath(__file__)
+dir_path = os.path.dirname(path)
+sys.path.insert(0,dir_path)
 import awswrangler.exceptions as exceptions
 from botocore.exceptions import ClientError
 import awswrangler as wr
@@ -263,7 +268,7 @@ def add_co_rep_data(rep_detail,new_image,cross_accnt_session,logger):
             
             role_code = rep_detail['M']['org_role_cd']['S']
             market_id = rep_detail['M']['lob_id']['S']
-            co_rep_desc = rep_detail['M']['co_rep_desc']['S']
+            co_rep_desc = rep_detail['M']['lob_nm']['S']
             emp_type = get_emp_type(co_rep_data_table,role_code,logger)
             agncy_cd = str(int(new_image['agncy_cd']['S']))
             co_rep_code_list = get_com_rep_code(co_rep_data_table,emp_type,emp_num,logger)
@@ -379,7 +384,7 @@ def delete_co_rep_data(rep_detail,old_image,cross_accnt_session,logger):
         if valid_emp != False:
             logger.info(f"{emp_num} :Valid employee")
             market_id = rep_detail['M']['lob_id']['S']
-            co_rep_desc = rep_detail['M']['co_rep_desc']['S']
+            co_rep_desc = rep_detail['M']['lob_nm']['S']
             role_code = rep_detail['M']['org_role_cd']['S']
             emp_type = get_emp_type(co_rep_data_table,role_code,logger)
             agncy_cd = old_image['agncy_cd']['S']

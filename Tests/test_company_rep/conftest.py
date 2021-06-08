@@ -1,7 +1,7 @@
 import os
 import sys
 print(sys.path)
-from input_map import data_init_dict
+from .input_map import data_init_dict
 import pytest
 import boto3
 from moto import mock_dynamodb2
@@ -48,6 +48,7 @@ def table(dynamodb):
         BillingMode='PAY_PER_REQUEST'
     )
     co_rep_data_table = dynamodb.Table('test')
+
     for item in data_init_dict:
         co_rep_data_table.put_item(Item=item)
 

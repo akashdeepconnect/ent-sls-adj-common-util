@@ -2,6 +2,9 @@ from aws_cdk import aws_lambda as lambdas
 from aws_cdk import core, aws_iam
 import os
 from .iam_service import IAMService
+import aws_cdk.aws_dynamodb as dynamodb
+from aws_cdk import aws_dynamodb as ddb
+from aws_cdk.aws_lambda_event_sources import DynamoEventSource
 class LambdaService:
 
     def __init__(self, layers=None, role_arn=None, env=None, scope=None):
@@ -42,6 +45,17 @@ class LambdaService:
             handler="lambda_function.lambda_handler",
             environment=environment
         )
+    def ret_dynamodb(self):
+        return ddb.ITable.table_arn('arn:aws:dynamodb:us-east-1:315207712355:table/test')
+
+
+    def create_dynamodb_trigger(self):
+        db_trigger = DynamoEventSource(self.ret_dynamodb(), batch_size=1000,\
+                                       max_batching_window=1,\
+                                       max_record_age=60, parallelization_factor=4,\
+                                       retry_attempts=0)
+        return db_trigger
+
 
     def create_lambda_layer(self, name, path, scope=None, description = None, layer_version_name=None):
         scope = scope if scope else self.scope
